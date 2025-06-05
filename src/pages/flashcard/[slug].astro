@@ -1,8 +1,9 @@
 ---
-import "../../styles/global.css";
 import Layout from "../../layouts/Layout.astro";
 import { flashCards } from "../../components/FlashCards";
 import { NavBar } from "../../components/NavBar";
+// Importar todo de la carpeta de componentes de Quizzes
+import { AnimalFlashCardTest } from "../../components/Quizzes/AnimalFlashCardTest";
 
 // Esta función es necesaria para rutas dinámicas en Astro
 export async function getStaticPaths() {
@@ -19,11 +20,7 @@ const { flashcard } = Astro.props;
 
 <Layout title={`Flashcard: ${flashcard.flashCardTitle}`}>
   <NavBar />
-  <main class="p-6 flex flex-col gap-6">
-    <section>
-      <p>
-        This is the flashcard test for the theme, <span class="font-bold">{flashcard.flashCardTitle}</span>.
-      </p>
-    </section>
+  <main class="h-full p-6 flex flex-col gap-6">
+    <AnimalFlashCardTest client:idle />
   </main>
 </Layout>
