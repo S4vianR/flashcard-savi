@@ -9,17 +9,17 @@ import { FlashCards } from "../components/FlashCards";
   description="A simple flashcard app to help you learn new things."
 >
   <NavBar client:load />
-  <main class="grid grid-cols-[1fr_9fr] gap-4 p-4">
+  <main class="h-full grid grid-cols-[1fr_9fr] gap-4 p-4">
     <aside>
       Flashcard is a simple app to help you learn new things by creating
       flashcards.
     </aside>
-    <section class="h-full flex flex-col gap-4">
+    <section class="flex flex-col gap-4">
       <h1>
         <span class="text-2xl font-bold">Flashcard</span>
         <span class="text-gray-500">v0.1.0</span>
       </h1>
-      <FlashCards client:load />
+      <FlashCards client:idle />
     </section>
   </main>
 </Layout>

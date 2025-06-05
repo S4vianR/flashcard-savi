@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { flashCards } from '../../components/FlashCards';
+
+// Esta función es necesaria para rutas dinámicas en Astro
+export async function getStaticPaths() {
+  // Genera una página para cada flashcard en el array
+  return flashCards.map(card => ({
+    params: { slug: card.slug },
+    props: { flashcard: card },
+  }));
+}
+
+// Recibir la flashcard como prop desde getStaticPaths
+const { flashcard } = Astro.props;
+---
+
+<Layout title={`Flashcard: ${flashcard.flashCardTitle}`}>
+  <main class="p-6 flex flex-col items-center gap-6">
+    <a href="/" class="self-start text-blue-600 hover:underline">← Volver a inicio</a>
+    
+    <div class="bg-white rounded-lg shadow-xl overflow-hidden max-w-2xl mx-auto">
+      <img 
+        src={flashcard.flashcardImageFull} 
+        alt={flashcard.flashCardTitle}
+        class="w-full object-cover h-64"
+      />
+      <div class="p-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">{flashcard.flashCardTitle}</h1>
+        <p class="text-gray-700">
+          Esta es la página detalle para la categoría de flashcards <strong>{flashcard.flashCardTitle}</strong>.
+          Aquí puedes añadir más información relacionada con esta categoría de flashcards,
+          como una descripción, instrucciones o las flashcards específicas que pertenecen
+          a esta categoría.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
