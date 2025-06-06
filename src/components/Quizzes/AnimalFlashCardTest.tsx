@@ -120,7 +120,6 @@ export const AnimalFlashCardTest = () => {
 
       <form
         action="#"
-        onSubmit={}
         className="h-10/12 p-6 border border-gray-200 shadow-lg flex flex-col justify-center items-center gap-4"
       >
         <h3 className="text-xl font-bold">What animal is it?</h3>
