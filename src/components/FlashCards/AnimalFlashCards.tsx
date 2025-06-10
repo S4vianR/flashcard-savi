@@ -43,7 +43,6 @@ export const AnimalFlashCardTest = () => {
     setCurrentIndex((prev) => (prev + 1) % animals.length);
   };
 
-
   const previousCard = () => {
     setCurrentIndex((prev) => (prev - 1 + animals.length) % animals.length);
   };
@@ -81,7 +80,7 @@ export const AnimalFlashCardTest = () => {
         </p>
         <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
           <div
-            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+            className="bg-(--custom-blue) h-2 rounded-full transition-all duration-300"
             style={{ width: `${((currentIndex + 1) / animals.length) * 100}%` }}
           ></div>
         </div>
@@ -99,13 +98,13 @@ export const AnimalFlashCardTest = () => {
       <div className="flex justify-center items-center">
         <button
           onClick={previousCard}
-          className="w-24 cursor-pointer bg-slate-300 hover:bg-slate-400 text-slate-800 font-bold py-2 px-4 rounded-l"
+          className="w-24 cursor-pointer bg-(--custom-blue) hover:bg-(--custom-blue)/80 transition-colors duration-200 text-white font-bold py-2 px-4 rounded-l"
         >
           Previous
         </button>
         <button
           onClick={nextCard}
-          className="w-24 cursor-pointer bg-pink-400/65 hover:bg-pink-400/95 text-slate-50 font-bold py-2 px-4 rounded-r"
+          className="w-24 cursor-pointer bg-(--custom-red) hover:bg-(--custom-red)/80 transition-colors duration-200 text-white font-bold py-2 px-4 rounded-r"
         >
           Next
         </button>

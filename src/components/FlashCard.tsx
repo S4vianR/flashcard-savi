@@ -8,7 +8,7 @@ interface FlashCardProps {
 export const FlashCard = ({ image, title, onClick }: FlashCardProps) => {
   return (
     <div
-      className="w-80 h-96 flex flex-col bg-purple-100 shadow-pink-500/50 shadow-lg rounded-lg p-4 hover:shadow-xl cursor-pointer transition-shadow"
+      className="w-80 h-96 flex flex-col bg-(--background-main) shadow-[var(--custom-purple)]/30 shadow-lg rounded-lg p-4 hover:shadow-[var(--custom-purple)]/50 hover:shadow-xl cursor-pointer transition-shadow"
       onClick={onClick}
     >
       <img

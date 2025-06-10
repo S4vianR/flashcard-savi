@@ -3,26 +3,22 @@ let smallImageSize = [200, 300] as Array<number>;
 let largeImageSize = [600, 300] as Array<number>;
 export const flashCards = [
   {
-    flashcardImage: `https://picsum.photos/id/40/${smallImageSize[0]}/${smallImageSize[1]}.webp`,
-    flashcardImageFull: `https://picsum.photos/id/40/${largeImageSize[0]}/${largeImageSize[1]}.webp`,
+    flashcardImage: `/assets/animals/fox.webp`,
     flashCardTitle: "Animals",
     slug: "animals"
   },
   {
-    flashcardImage: `https://picsum.photos/id/101/${smallImageSize[0]}/${smallImageSize[1]}.webp`,
-    flashcardImageFull: `https://picsum.photos/id/101/${largeImageSize[0]}/${largeImageSize[1]}.webp`,
+    flashcardImage: `/assets/countries/italy.webp`,
     flashCardTitle: "Countries",
     slug: "countries"
   },
   {
-    flashcardImage: `https://picsum.photos/id/102/${smallImageSize[0]}/${smallImageSize[1]}.webp`,
-    flashcardImageFull: `https://picsum.photos/id/102/${largeImageSize[0]}/${largeImageSize[1]}.webp`,
+    flashcardImage: `/assets/food/blackberry.webp`,
     flashCardTitle: "Food",
     slug: "food"
   },
   {
-    flashcardImage: `https://picsum.photos/id/181/${smallImageSize[0]}/${smallImageSize[1]}.webp`,
-    flashcardImageFull: `https://picsum.photos/id/181/${largeImageSize[0]}/${largeImageSize[1]}.webp`,
+    flashcardImage: `/assets/abcs/abcs.webp`,
     flashCardTitle: "ABC's",
     slug: "abcs"
   },
@@ -30,7 +26,6 @@ export const flashCards = [
 
 type FlashCardProps = {
   flashcardImage: string;
-  flashcardImageFull?: string;
   flashCardTitle: string;
   slug: string;
 };
@@ -42,7 +37,7 @@ const FlashCard = ({ flashcardImage, flashCardTitle, slug }: FlashCardProps) => 
         <img
           src={flashcardImage}
           alt="Flashcard Example"
-          className="w-full object-cover rounded-lg"
+          className="w-full h-72 object-cover rounded-lg"
         />
         <span className="block mt-2 text-center text-gray-700 font-medium">
           {flashCardTitle}

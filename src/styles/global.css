@@ -2,4 +2,10 @@
 
 @theme {
   --nunito: 'Nunito', sans-serif;
+  /* Custom color palette */
+  --custom-purple: #360098;
+  --custom-red: #980016;
+  --custom-green: #629800;
+  --custom-blue: #009882;
+  --background-main: #F8F5FF;
 }
